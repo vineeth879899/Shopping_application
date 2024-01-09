@@ -1,0 +1,76 @@
+<header>
+    <div class="navbar navbar-dark bg-success shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i routerLink="/homepage" style="font-size:larger " class="fas fa-shipping-fast">
+               
+            </i> &nbsp;&nbsp;
+            <strong routerLink="/homepage" style="font: size 40px; cursor: pointer;"><i>MyStore</i></strong>
+
+        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button  class="btn btn-success">
+            <i routerLink="/cart" style="font-size:30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">0</div>
+        </button>
+       
+        <button (click)="logout()" class="btn btn-danger" > Logout </button>&nbsp;&nbsp;&nbsp;
+        <strong>Welcome Preetham</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</header>
+<h2 class="text-center">Your Orders</h2>
+<br>
+<ng-container  *ngIf="product.length !=0">
+   <div class="container">
+    <div class="card-table">
+        <div class="class-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Product Name</th>
+                        <th>Product Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of product;let i = index;">
+                        <td>{{i+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td><img style="width: 120px;" src="{{item.image}}" alt=""> </td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.price*item.quantity }}</td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><strong>Grand Total: Rs{{grandtotal}}</strong></td>
+                        <td><button routerLink="/homepage" class="btn btn-primary">Shop more</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   </div>
+
+
+</ng-container>
+
+<ng-container *ngIf="product.length ==0">
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">My Orders</h2>
+        </div>
+        <div class="center">
+            <i style="font-size:larger" class="fa fa-first-order"></i>
+            <h4>You haven't placed any orders!!</h4>
+            <h6>Add item into your cart and place the order:)</h6>
+            <button routerLink="/homepage" class="btn btn-primary">Shop now</button>
+        </div>
+    </div>
+</ng-container>
+

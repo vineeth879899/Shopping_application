@@ -1,0 +1,21 @@
+<header>
+    <div class="navbar navbar-dark bg-success shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i routerLink="/homepage" style="font-size:larger; cursor: pointer;" class="fas fa-shipping-fast">
+               
+            </i> &nbsp;&nbsp;
+            <strong routerLink="/homepage"  style="font: size 40px; cursor: pointer;"><i>MyStore</i></strong>
+
+        </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button (click)="cartpage()" class="btn btn-success">
+            <i style="font-size:30px;" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+        <button routerLink="/orders" class="btn btn-primary" > My orders</button>
+        <button (click)="logout()" class="btn btn-danger" > Logout </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>Welcome vineeth</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</header>
+
